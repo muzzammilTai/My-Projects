@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CSS File-->
+
+    <link rel="stylesheet" href="style.css">
+    <title>Age Calculator</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="dob">
+            <input type="date" id="dob" placeholder="day/month/year">
+            <button id="button" onclick="calc()"> Calculate</button>
+        </div>
+
+        <!--Display-->
+
+        <ul>
+            <li><span>00</span>years</li>
+            <li><span>00</span>months</li>
+            <li><span>00</span>days</li>
+            <li><span>00</span>hours</li>
+            <li><span>00</span>minutes</li>
+            <li><span>00</span>seconds</li>
+        </ul>
+    </div>
+
+    <!--JavaScript-->
+
+    <script type="text">
+        var btn = document.getElementById("button"),
+            div = document.getElementById("div"),
+            date = new Date(),
+            month = date.getmonth(),
+            day = date.getdate(),
+            year = date.getyear;
+
+            span = document.querySelectorAll("span");
+
+        function calc() {
+            var Ndate = new Date(),
+                hours = gethours(),
+                minutes = getminutes(),
+                seconds = getseconds();
+        }
+
+    var data = window.input.value,
+        arr = data.split("_"),
+        arr0 = eval(arr[2]),
+    </script>
+
+</body>
+
+</html>
