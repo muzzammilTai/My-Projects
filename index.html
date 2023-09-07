@@ -31,36 +31,36 @@
 
     <!--JavaScript-->
 
-    <script type="text">
+    <script type="text/JavaScript">
       var btn = document.getElementById("button"),
           div = document.getElementById("div"),
           date = new Date(),
           month = date.getmonth(),
           day = date.getdate(),
-          year = date.getyear;
+          year = date.getyear();
 
           span = document.querySelectorAll("span");
 
       function calc() {
           var Ndate = new Date(),
-              hours = gethours(),
-              minutes = getminutes(),
-              seconds = getseconds();
+              hours = Ndate.gethours(),
+              minutes = Ndate.getminutes(),
+              seconds = Ndate.getseconds(); 
 
       var data = window.input.value,
-          arr = data.split("-"),
+          arr = data.split("_"),
           arr0 = eval(arr[2]),
           arr1 = eval(arr[1]),
           arr2 = eval(arr[0]),
           userday = 30 + day - arr0,
-          usermonth = 12 + month -arr1,
+          usermonth = 12 + month - arr1,
           useryear = year - 1 - arr2,
 
           if(arr[1] == null){
             span.textContent.display = "none";
           }
 
-          if (userday >=30){
+          if (userday >= 30){
             userday = 0 + userday % 30;
             usermonth = usermonth + 1;
           }
