@@ -1,81 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- CSS File -->
     <link rel="stylesheet" href="style.css" />
     <title>Age Calculator</title>
-  </head>
+</head>
 
-  <body>
-    <div class="main">
-      <div class="dob">
+<body>
+<div class="main">
+    <div class="dob">
         <input type="date" id="input" placeholder="day/month/year" />
         <button id="button" onclick="calculateAge()">Calculate</button>
-      </div>
-
-      <!-- Display -->
-      <ul>
-        <li><span>00</span> years</li>
-        <li><span>00</span> months</li>
-        <li><span>00</span> days</li>
-        <li><span>00</span> hours</li>
-        <li><span>00</span> minutes</li>
-        <li><span>00</span> seconds</li>
-      </ul>
     </div>
 
-    <!-- JavaScript -->
-    <script type="text/javascript">
-      function calculateAge() {
-        var inputDate = new Date(document.getElementById("input").value);
-        var currentDate = new Date();
+    <!-- Display -->
+    <div id="time">
+        <div class="circle" style="--clr:#d11141">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="yy" stroke-dasharray="439"></circle>
+            </svg>
+            <div id="years">00<br><span>years</span></div>
+        </div>
 
-        var ageInMilliseconds = currentDate - inputDate;
+        <div class="circle" style="--clr:#00b159">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="mm" stroke-dasharray="439"></circle>
+            </svg>
+            <div id="months">00<br><span>months</span></div>
+        </div>
 
-        var years = Math.floor(ageInMilliseconds / 31536000000);
-        var months = Math.floor(
-          (ageInMilliseconds % 31536000000) / 2628000000
-        );
-        var days = Math.floor(
-          ((ageInMilliseconds % 31536000000) % 2628000000) / 86400000
-        );
-        var hours = Math.floor(
-          (((ageInMilliseconds % 31536000000) % 2628000000) % 86400000) /
-            3600000
-        );
-        var minutes = Math.floor(
-          ((((ageInMilliseconds % 31536000000) % 2628000000) % 86400000) %
-            3600000) /
-            60000
-        );
-        var seconds = Math.floor(
-          (((((ageInMilliseconds % 31536000000) % 2628000000) %
-            86400000) %
-            3600000) %
-            60000) /
-            1000
-        );
+        <div class="circle" style="--clr:#00aedb">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="dd" stroke-dasharray="439"></circle>
+            </svg>
+            <div id="days">00<br><span>days</span></div>
+        </div>
+
+        <div class="circle" style="--clr:#f37735">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="hh" stroke-dasharray="439"></circle>
+            </svg>
+            <div id="hours">00<br><span>hours</span></div>
+        </div>
+
+        <div class="circle" style="--clr:#ffc425">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="ms" stroke-dasharray="439"></circle>
+            </svg>
+            <div id="minutes">00<br><span>minutes</span></div>
+        </div>
+
+        <div class="circle" style="--clr:#6c2999">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="ss" stroke-dasharray="439"></circle>
+            </svg>
+            <div id="seconds">00<br><span>seconds</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script type="text/javascript">
+    function calculateAge() {
+
+        let inputDate = new Date(document.getElementById("input").value);
+        let currentDate = new Date();
+
+        let ageInMilliseconds = currentDate - inputDate;
+
+        let years = Math.floor(ageInMilliseconds / 31536000000);
+        let months = Math.floor((ageInMilliseconds % 31536000000) / 2628000000);
+        let days = Math.floor(((ageInMilliseconds % 31536000000) % 2628000000) / 86400000);
+        let hours = Math.floor((((ageInMilliseconds % 31536000000) % 2628000000) % 86400000) / 3600000);
+        let minutes = Math.floor(((((ageInMilliseconds % 31536000000) % 2628000000) % 86400000) % 3600000) / 60000);
+        let seconds = Math.floor((((((ageInMilliseconds % 31536000000) % 2628000000) % 86400000) % 3600000) % 60000) / 1000);
 
         updateDisplay(years, months, days, hours, minutes, seconds);
-      }
+    }
 
-      function updateDisplay(years, months, days, hours, minutes, seconds) {
-        var spans = document.querySelectorAll("ul li span");
-        spans[0].textContent = years < 10 ? "0" + years : years;
-        spans[1].textContent = months < 10 ? "0" + months : months;
-        spans[2].textContent = days < 10 ? "0" + days : days;
-        spans[3].textContent = hours < 10 ? "0" + hours : hours;
-        spans[4].textContent = minutes < 10 ? "0" + minutes : minutes;
-        spans[5].textContent = seconds < 10 ? "0" + seconds : seconds;
+    function updateDisplay(years, months, days, hours, minutes, seconds) {
+        document.getElementById("years").textContent = years < 10 ? "0" + years : years;
+        document.getElementById("months").textContent = months < 10 ? "0" + months : months;
+        document.getElementById("days").textContent = days < 10 ? "0" + days : days;
+        document.getElementById("hours").textContent = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").textContent = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").textContent = seconds < 10 ? "0" + seconds : seconds;
         
-        setInterval(calculateAge, 1000);
-      }
-    </script>
-  </body>
+        animateCircles(years, months, days, hours, minutes, seconds);
+    }
+
+    // Initially, set up the interval to update the age
+    setInterval(calculateAge, 1000);
+    
+    function animateCircles(years, months, days, hours, minutes, seconds) {
+        animateCircle("yy", years / 100);
+        animateCircle("mm", months / 12);
+        animateCircle("dd", days / 31);
+        animateCircle("hh", hours / 24);
+        animateCircle("ms", minutes / 60);
+        animateCircle("ss", seconds / 60);
+    }
+    
+    function animateCircle(id, percentage) {
+        const circle = document.getElementById(id);
+        const circumference = 440; // Circumference of the circle
+        const strokeDashOffset = circumference - (percentage * circumference);
+        circle.style.strokeDashoffset = strokeDashOffset;
+    }
+</script>
+</body>
 </html>
