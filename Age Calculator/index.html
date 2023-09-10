@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Age Calculator</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="dob">
+        <input type="date" id="input" placeholder="day/month/year" />
+        <button id="button" onclick="calculateAge()">Calculate</button>
+      </div>
+
+      <!-- Display -->
+      <ul>
+        <li><span>00</span> years</li>
+        <li><span>00</span> months</li>
+        <li><span>00</span> days</li>
+        <li><span>00</span> hours</li>
+        <li><span>00</span> minutes</li>
+        <li><span>00</span> seconds</li>
+      </ul>
+    </div>
+
+    <!-- JavaScript -->
+    <script type="text/javascript">
+      function calculateAge() {
+        var inputDate = new Date(document.getElementById("input").value);
+        var currentDate = new Date();
+
+        var ageInMilliseconds = currentDate - inputDate;
+
+        var years = Math.floor(ageInMilliseconds / 31536000000);
+        var months = Math.floor(
+          (ageInMilliseconds % 31536000000) / 2628000000
+        );
+        var days = Math.floor(
+          ((ageInMilliseconds % 31536000000) % 2628000000) / 86400000
+        );
+        var hours = Math.floor(
+          (((ageInMilliseconds % 31536000000) % 2628000000) % 86400000) /
+            3600000
+        );
+        var minutes = Math.floor(
+          ((((ageInMilliseconds % 31536000000) % 2628000000) % 86400000) %
+            3600000) /
+            60000
+        );
+        var seconds = Math.floor(
+          (((((ageInMilliseconds % 31536000000) % 2628000000) %
+            86400000) %
+            3600000) %
+            60000) /
+            1000
+        );
+
+        updateDisplay(years, months, days, hours, minutes, seconds);
+      }
+
+      function updateDisplay(years, months, days, hours, minutes, seconds) {
+        var spans = document.querySelectorAll("ul li span");
+        spans[0].textContent = years < 10 ? "0" + years : years;
+        spans[1].textContent = months < 10 ? "0" + months : months;
+        spans[2].textContent = days < 10 ? "0" + days : days;
+        spans[3].textContent = hours < 10 ? "0" + hours : hours;
+        spans[4].textContent = minutes < 10 ? "0" + minutes : minutes;
+        spans[5].textContent = seconds < 10 ? "0" + seconds : seconds;
+        
+        setInterval(calculateAge, 1000);
+      }
+    </script>
+  </body>
+</html>
