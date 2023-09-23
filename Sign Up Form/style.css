@@ -1,0 +1,82 @@
+:root {
+  --error-color: #e51f1f;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background: url(images/background.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: rgb(238, 238, 238);
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  text-align: center;
+  padding: 30px 22px;
+  width: 300px;
+  transform: translate(-50%, -50%);
+  background: #ffffff02;
+  box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+}
+
+.field {
+  padding: 15px;
+}
+
+::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.field input {
+  border: none;
+  outline: none;
+  color: white;
+  width: 200px;
+  line-height: 30px;
+  border-bottom: 1px solid white;
+  background: transparent;
+  padding: 0 5px;
+}
+
+input[type="submit"] {
+  color: white;
+  width: 205px;
+  line-height: 31px;
+  border-radius: 15px;
+  border: none;
+  background: linear-gradient(90deg, #613ffb 0%, #fc46aa 100%);
+}
+
+.field input:focus {
+  outline: none;
+}
+
+.field.error input {
+  border-color: var(--error-color);
+}
+
+.field.success input {
+  border-color: var(--success-color);
+}
+
+
+.field small {
+  color: var(--error-color);
+}
