@@ -1,0 +1,281 @@
+:root {
+  --page: #171717;
+  --primary: #cd0832;
+  --primary-hover:#8d122d;
+  --body: #ffffff;
+  --login: #101010;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--page);
+}
+
+/* LOGO SECTION */
+
+.logo {
+  position: fixed;
+  z-index: 100;
+}
+
+.logo .strokes {
+  animation: rotate 5s ease-in-out;
+}
+
+.logo .stroke1,
+.stroke2,
+.stroke3,
+.stroke4,
+.stroke5,
+.stroke6 {
+  animation: animate 5s ease-in-out;
+}
+
+.logo .stroke1 {
+  position: absolute;
+  background: var(--primary);
+  width: 2.5rem;
+  height: 12rem;
+  border-radius: 50rem;
+}
+
+.logo .stroke2 {
+  position: absolute;
+  background: var(--primary);
+  width: 2.5rem;
+  height: 5rem;
+  border-radius: 50rem;
+  transform: rotate(-70deg);
+  margin-top: -1rem;
+  margin-left: 1.2rem;
+}
+
+.logo .strokeG1 {
+  margin-left: 0.5rem;
+}
+
+.logo .stroke3 {
+  position: absolute;
+  background: var(--body);
+  width: 2.5rem;
+  height: 9rem;
+  border-radius: 50rem;
+  transform: rotate(-300deg);
+  margin-top: -2rem;
+  margin-left: 7rem;
+}
+
+.logo .stroke4 {
+  position: absolute;
+  background: var(--body);
+  width: 2.5rem;
+  height: 5rem;
+  border-radius: 50rem;
+  transform: rotate(60deg);
+  margin-top: 5rem;
+  margin-left: 5.1rem;
+}
+
+.logo .stroke5 {
+  position: absolute;
+  background: var(--body);
+  width: 2.5rem;
+  height: 5rem;
+  border-radius: 50rem;
+  margin-top: 7rem;
+  margin-left: 4rem;
+}
+
+.logo .stroke6 {
+  position: absolute;
+  background: var(--primary);
+  width: 2.5rem;
+  height: 8.5rem;
+  border-radius: 50rem;
+  margin-top: 3.5rem;
+  margin-left: 10.5rem;
+}
+
+.logo p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 0.4rem;
+  position: relative;
+  color: white;
+  margin-top: 14rem;
+  text-align: center;
+  animation-delay: 12s;
+  animation: txt 9s ease-in-out;
+  font-style: bold;
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 1240deg;
+  }
+}
+
+@keyframes animate {
+  0% {
+    height: 0;
+  }
+  70% {
+    height: 100%;
+    rotate: 620deg;
+  }
+}
+
+@keyframes txt {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+/* LOGO SECTION END */
+
+/* LOGIN SECTION */
+
+.login .avatar {
+  position: absolute;
+  top: -1rem;
+  background: var(--primary);
+  border-radius: 25rem;
+  font-size: 3rem;
+}
+
+.login {
+  background: var(--login);
+  color: var(--body);
+  min-width: 20rem;
+  max-width: 35rem;
+}
+
+.login .form-box {
+  position: relative;
+  padding: .5rem;
+  margin: 2% auto;
+}
+
+.login .button-box {
+  position: relative;
+  padding: 0.5rem;
+  background: var(--page);
+}
+
+.login .toggle-button {
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  border: none;
+  color: var(--body);
+}
+
+.login #button {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 53%;
+  height:100%;
+  background: var(--primary);
+  transition: .5s ease;
+}
+
+.login #login{
+  display:block;
+}
+
+.login #register{
+  display:none;
+}
+
+.login .icon-link{
+  transition: .3s ease;
+}
+
+.login .icon-link:hover{
+  transform: scale(.8);
+  filter: saturate(2);
+}
+
+.login .inputGroup {
+  position: relative;
+}
+
+.login .inputGroup a{
+  font-size: 12px;
+}
+
+.login .input {
+  background: transparent;
+  border: 0.1rem solid var(--body);
+  border-radius: 25rem;
+  outline: none;
+  color: var(--body);
+  transition: .2s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-control:hover{
+  border-color: var(--primary);
+}
+
+.login .label {
+  position: absolute;
+  top: 0.3rem;
+  left: 1rem;
+  pointer-events: none;
+  transition: .2s ease;
+  color: var(--body);
+  padding-left: .5rem;
+}
+
+.login .input:focus + .label {
+  top: -0.8rem;
+  left: 1.5rem;
+  background: var(--primary);
+  border-radius: 25rem;
+  padding-inline: 0.4rem;
+  transform: scale(0.8);
+  z-index: 1;
+}
+
+#btn {
+  background: var(--primary);
+  border: 0.15rem solid var(--primary);
+  outline: none;
+  font-style: bold;
+  letter-spacing: 0.1rem;
+  color: var(--body);
+  transition: 0.3s ease;
+}
+
+#btn:hover {
+  background: transparent;
+  border: 0.15rem solid var(--primary-hover);
+  color: var(--primary);
+  transform: scale(.95);
+}
+
+.login .text {
+  text-decoration: none;
+  color: grey;
+  transition: 0.3s ease;
+}
+
+.login .text:hover {
+  color: var(--body);
+}
