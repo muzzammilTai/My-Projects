@@ -23,6 +23,13 @@ input[type="text"]:focus {
 .todos li {
   background: #423a6f;
   color: #fff;
+  font-size: 5vw;
+}
+
+@media screen and (min-width:600px) {
+  .todos li{
+    font-size: 25px;
+  }
 }
 
 .delete {
