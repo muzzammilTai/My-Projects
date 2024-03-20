@@ -18,12 +18,12 @@
 	</div>
 	<!-- END SECTION: Splashscreen -->
 	<!-- SECTION: Navigation -->
-	<div id="top" class="navigation">
+	<!-- <div id="top" class="navigation">
 		<div class="navigation__wrapper wrapper--large">
 			<a class="navigation__logo logo" href="#0">مُزَّمِّل</a>
 			<nav class="navigation__container">
 				<ul class="navigation__list">
-					<li><a href="#0">Home</a></li>
+					<li><a class=".active" href="#home">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#skill">Skills</a></li>
 					<li><a href="#services">Services</a></li>
@@ -36,10 +36,39 @@
 				<span class="navigation__burger-el navigation__burger-el--bottom"></span>
 			</div>
 		</div>
-	</div>
+	</div> -->
+	<div class="container nav-container sticky-top mt-3">
+	<nav class="navbar navbar-expand-lg rounded-5 px-4">
+  <div class="container">
+    <a class="navbar-brand fs-3" href="#home">مُزَّمِّل</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skill">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
 	<!-- END SECTION: Navigation -->
 	<!-- SECTION: Intro -->
-	<header class="header">
+	<section class="header" id="home">
 		<div class="introduction">
 			<h1 class="introduction__content">
 				<span class="introduction__content-el introduction__content-el--name">I'm</span>
@@ -48,7 +77,7 @@
 			</h1>
 			<svg class="introduction__arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 130 65" xml:space="preserve" enable-background="new 0 0 130 65"><g transform="translate(0.000000,65.000000) scale(0.100000,-0.100000)"><path d="M22.2 634c-50-35-40-47 293-349 174-157 323-285 333-285 24 0 635 552 647 585 8 23 6 30-14 46 -13 10-31 19-40 19s-57-37-107-83c-50-45-179-162-287-260l-197-179 -147 134c-319 289-433 388-446 388C50.2 650 34.2 643 22.2 634z"/></g></svg>
 		</div>
-	</header>
+	</section>
 	<!-- END SECTION: Intro -->
 	<main role="main">
 		<!-- SECTION: About -->
@@ -173,11 +202,12 @@
 		</section>
 		<!-- END SECTION: skill -->
 		<!-- SECTION: responsive Design -->
-		<div class="wrapper position-relative start-50 translate-middle-x my-5" id="services">
+		<section  id="services">
+		<div class="wrapper position-relative start-50 translate-middle-x my-5">
 			<p class="blurb__copy blurb__copy--tight h4">Services</p>
 			<h2 class="blurb__heading text-center mt-3">What I Provide.</h2>
 		</div>
-		<section class="design d1">
+		<div class="design d1">
 			<div class="design__wrapper wrapper--large">
 				<div class="design__content blurb c1">
 					<h2 class="heading">Responsive Website <br> Design</h2>
@@ -185,10 +215,10 @@
 				</div>
 			</div>
 			<figure class="design__visual visual-1 bottom-0 "></figure>
-		</section>
+		</div>
 		<!-- END SECTION: responsive Design -->
 		<!-- SECTION: dynamic Design -->
-		<section class="design2 d2">
+		<div class="design2 d2">
 			<div class="design2__wrapper wrapper--small">
 				<div class="design2__content blurb c2">
 					<h2 class="heading">Dynamic User <br> Interfaces</h2>
@@ -196,10 +226,10 @@
 				</div>
 			</div>
 			<figure class="design2__visual visual-2"></figure>
-		</section>
+		</div>
 		<!-- END SECTION: dynamic Design -->
 		<!-- SECTION: Backend Design -->
-		<section class="design d3">
+		<div class="design d3">
 			<div class="design__wrapper wrapper--large">
 				<div class="design__content blurb c3">
 					<h2 class="heading">Efficient Backend <br> Solutions</h2>
@@ -207,10 +237,10 @@
 				</div>
 			</div>
 			<figure class="design3__visual visual-3"></figure>
-		</section>
+		</div>
 		<!-- END SECTION: Backend Design -->
 		<!-- SECTION: Wordpress Design -->
-		<section class="design2 d4">
+		<div class="design2 d4">
 			<div class="design2__wrapper wrapper--small">
 				<div class="design2__content blurb c4">
 					<h2 class="heading">Custom WordPress <br> Development</h2>
@@ -218,10 +248,10 @@
 				</div>
 			</div>
 			<figure class="design4__visual visual-4"></figure>
-		</section>
+		</div>
 		<!-- END SECTION: Wordpress Design -->
 		<!-- SECTION: responsive Design -->
-		<section class="design d5">
+		<div class="design d5">
 			<div class="design__wrapper wrapper--large">
 				<div class="design__content blurb c5">
 					<h2 class="heading">Visual Branding <br> & Graphics</h2>
@@ -229,10 +259,10 @@
 				</div>
 			</div>
 			<figure class="design5__visual visual-5"></figure>
-		</section>
+		</div>
 		<!-- END SECTION: responsive Design -->
 		<!-- SECTION: dynamic Design -->
-		<section class="design2 d6">
+		<div class="design2 d6">
 			<div class="design2__wrapper wrapper--small">
 				<div class="design2__content blurb c6">
 					<h2 class="heading">Optimized Performance <br> & Security</h2>
@@ -240,10 +270,10 @@
 				</div>
 			</div>
 			<figure class="design6__visual visual-6"></figure>
-		</section>
+		</div>
 		<!-- END SECTION: dynamic Design -->
 		<!-- SECTION: responsive Design -->
-		<section class="design d7">
+		<div class="design d7">
 			<div class="design__wrapper wrapper--large">
 				<div class="design__content blurb c7">
 					<h2 class="heading">Continuous Support <br> & Maintenance</h2>
@@ -251,6 +281,7 @@
 				</div>
 			</div>
 			<figure class="design7__visual visual-7"></figure>
+		</div>
 		</section>
 		<!-- END SECTION: responsive Design -->
 		<!-- SECTION: Contact -->

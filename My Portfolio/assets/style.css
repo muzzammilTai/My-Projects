@@ -344,6 +344,7 @@ textarea {
   left: 0;
   right: 45px;
   bottom: 0;
+  border-radius: 50%;
   border: 10px solid #2046f2;
   -webkit-animation: fadeInOut 1.6s linear infinite;
   animation: fadeInOut 1.6s linear infinite;
@@ -359,30 +360,6 @@ textarea {
   font-size: 32px;
   font-weight: 800;
   background-color: #fff;
-}
-.logo {
-  color: #585858;
-  font-size: 34px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-.transform-link {
-  font-weight: 700;
-}
-.transform-link::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #2046f2;
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  transition: -webkit-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
-}
-.transform-link:hover::after {
-  -webkit-transform: translateY(3px) scaleY(3);
-  transform: translateY(3px) scaleY(3);
 }
 .button,
 button,
@@ -518,15 +495,62 @@ input[type="button"]:focus {
     transform: scale(1);
   }
 }
-.navigation {
-  position: sticky;
-  top: 0;
-  width: 100vw;
-  height: 100px;
+
+.nav-container{
+position: sticky;
+  top: 15px;
+}
+
+.navbar {
   z-index: 10;
   background: #ffffff;
   box-shadow: 0 0 25px #757575c1;
+}   
+
+.navbar-brand{
+  color: #6882f6;
 }
+
+.navbar-toggler{
+  border: none;
+}
+
+.navbar-toggler .navbar-nav{
+  margin: auto;
+}
+
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
+.nav-item .active {
+  font-weight: 700;
+}
+.nav-item .active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #2046f2;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+.nav-item .active:hover::after {
+  transform: translateY(3px);
+}
+.nav-item .nav-link:hover::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #2046f2;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
+/*
 .navigation__wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -543,10 +567,7 @@ input[type="button"]:focus {
 }
 .navigation__container {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  right: 0%;
   width: 45%;
 }
 .navigation__list {
@@ -566,7 +587,10 @@ input[type="button"]:focus {
   transition: color 0.2s ease-in-out;
 }
 .navigation__list > li a:hover {
-  color: #787878;
+  color: #2046f2;
+}
+.navigation__list > li.active {
+  color: #2046f2;
 }
 .navigation__burger {
   display: none;
@@ -719,7 +743,7 @@ input[type="button"]:focus {
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
   }
-}
+} */
 .scroll-lock {
   position: fixed;
   width: 100%;
