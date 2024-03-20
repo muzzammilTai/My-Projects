@@ -504,7 +504,7 @@ position: sticky;
 .navbar {
   z-index: 10;
   background: #ffffff;
-  box-shadow: 0 0 25px #757575c1;
+  box-shadow: 0 0 15px #757575c1;
 }   
 
 .navbar-brand{
@@ -513,10 +513,6 @@ position: sticky;
 
 .navbar-toggler{
   border: none;
-}
-
-.navbar-toggler .navbar-nav{
-  margin: auto;
 }
 
 .navbar-toggler:focus{
@@ -1411,6 +1407,10 @@ position: sticky;
   position: absolute;
   top: 50%;
   left: 50%;
+  color: #6882f6;
+  font-size: 34px;
+  font-weight: 800;
+  text-transform: uppercase;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -1452,6 +1452,7 @@ position: sticky;
     -ms-flex-order: 3;
     order: 3;
   }
+  
   .footer__logo {
     position: static;
     -webkit-transform: translate(0, 0);
