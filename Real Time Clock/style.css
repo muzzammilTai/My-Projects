@@ -1,0 +1,256 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: rgb(245, 245, 255);
+}
+
+.center-dial {
+  transition: all 0.5s;
+  width: 45vw;
+  height: 45vw;
+  background-color: #1a1a1a;
+  color: #2d2d2d;
+  box-shadow: 8px 8px 20px 5px #000000a2;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.center-dial::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #2f363e;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  z-index: 100000;
+}
+
+.center-dial span {
+  position: absolute;
+  background: none;
+  font-size: 2rem;
+  inset: 1vw;
+  color: #ffffff44;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--i)));
+}
+
+.hand {
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+}
+
+.hand:nth-child(1) i {
+  width: 2px;
+}
+
+.hand:nth-child(2) i {
+  width: 6px;
+}
+
+.minute-hand {
+  width: 25vw;
+  height: 25vw;
+  z-index: 9;
+}
+
+.hour-hand {
+  width: 20vw;
+  height: 20vw;
+  z-index: 8;
+}
+
+.hand::before {
+  content: '';
+  position: absolute;
+  top: -8.5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--clr);
+  box-shadow: 0 0 10px var(--clr),
+    0 0 40px var(--clr);
+}
+
+.digital {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10vw;
+  height: 10vw;
+  padding: 10px 10px;
+  background: #4d65ff;
+  border-radius: 50%;
+  color: #fff;
+   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+#time div {
+  position: relative;
+  width: 60px;
+  text-align: center;
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+#time div:nth-child(1)::after,
+#time div:nth-child(2)::after {
+  content: ':';
+  position: absolute;
+  right: -5px;
+}
+
+#time div:last-child {
+  font-size: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+#time div:nth-child(2)::after {
+  animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+.center-dial {
+    width: 450px;
+    height: 450px;
+  }
+
+  .center-dial span {
+    inset: 5px;
+  }
+
+  .center-dial span b {
+    font-size: 1em;
+  }
+
+  .hand {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hand:nth-child(1) i {
+    width: 1px;
+  }
+
+  .hand:nth-child(2) i {
+    width: 3px;
+  }
+
+  .minute-hand {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hour-hand {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hand::before {
+    top: -6.5px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .center-dial {
+    width: 85vw;
+    height: 85vw;
+  }
+
+  .center-dial span {
+    inset: 1vw;
+  }
+
+  .center-dial span b {
+    font-size: 5.5vw;
+  }
+
+  .hand {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .hand:nth-child(1) i {
+    width: 1px;
+  }
+
+  .hand:nth-child(2) i {
+    width: 2px;
+  }
+
+  .minute-hand {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  .hour-hand {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .hand::before {
+    top: -4.5px;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #time {
+     width: 80px;
+    height: 80px;
+    padding: 5px 5px;
+  }
+
+  #time div {
+    width: 50px;
+    font-size: 1rem;
+  }
+
+  #time div:last-child {
+    font-size: 0.4em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #time {
+    width: 20vw;
+    height: 20vw;
+    font-size: 3.5vw;
+    padding: 2px 2px;
+  } 
+
+  #time div {
+    width: 40px;
+  }
+
+  #time div:last-child {
+    font-size: 3vw;
+  }
+}
