@@ -19,54 +19,54 @@
     <!-- Display -->
     <div id="time">
         <div class="circle" style="--clr:#d11141">
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="yy" stroke-dasharray="439"></circle>
+            <svg  version="1.1" viewBox="0 0 150 150" preserveAspectRatio="xMinYMin meet">
+                <circle cx="75" cy="75" r="70"></circle>
+                <circle cx="75" cy="75" r="70" id="yy" stroke-dasharray="439" stroke-linecap="round"></circle>
             </svg>
             <div id="years">00</div>
             <div class="txt">years</div>
         </div>
 
         <div class="circle" style="--clr:#f37735">
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="mm" stroke-dasharray="439"></circle>
+            <svg  version="1.1" viewBox="0 0 150 150" preserveAspectRatio="xMinYMin meet">
+                <circle cx="75" cy="75" r="70"></circle>
+                <circle cx="75" cy="75" r="70" id="mm" stroke-dasharray="439" stroke-linecap="round"></circle>
             </svg>
             <div id="months">00</div>
             <div class="txt">months</div>
         </div>
 
         <div class="circle" style="--clr:#ffc425">
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="dd" stroke-dasharray="439"></circle>
+            <svg  version="1.1" viewBox="0 0 150 150" preserveAspectRatio="xMinYMin meet">
+                <circle cx="75" cy="75" r="70"></circle>
+                <circle cx="75" cy="75" r="70" id="dd" stroke-dasharray="439" stroke-linecap="round"></circle>
             </svg>
             <div id="days">00</div>
             <div class="txt">days</div>
         </div>
         
         <div class="circle" style="--clr:#00b159">
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="hh" stroke-dasharray="439"></circle>
+<svg  version="1.1" viewBox="0 0 150 150" preserveAspectRatio="xMinYMin meet">
+                <circle cx="75" cy="75" r="70"></circle>
+                <circle cx="75" cy="75" r="70" id="hh" stroke-dasharray="439" stroke-linecap="round"></circle>
             </svg>
             <div id="hours">00</div>
             <div class="txt">hours</div>
         </div>
 
         <div class="circle" style="--clr:#00aedb">
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="ms" stroke-dasharray="439"></circle>
+            <svg  version="1.1" viewBox="0 0 150 150" preserveAspectRatio="xMinYMin meet">
+                <circle cx="75" cy="75" r="70"></circle>
+                <circle cx="75" cy="75" r="70" id="ms" stroke-dasharray="439" stroke-linecap="round"></circle>
             </svg>
             <div id="minutes">00</div>
             <div class="txt">minutes</div>
         </div>
 
         <div class="circle" style="--clr:#6c2999">
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="ss" stroke-dasharray="439"></circle>
+            <svg  version="1.1" viewBox="0 0 150 150" preserveAspectRatio="xMinYMin meet">
+                <circle cx="75" cy="75" r="70"></circle>
+                <circle cx="75" cy="75" r="70" id="ss" stroke-dasharray="439" stroke-linecap="round"></circle>
             </svg>
             <div id="seconds">00</div>
             <div class="txt">seconds</div>
@@ -118,7 +118,7 @@
     
     function animateCircle(id, percentage) {
         const circle = document.getElementById(id);
-        const circumference = 440; // Circumference of the circle
+        const circumference = 439;
         const strokeDashOffset = circumference - (percentage * circumference);
         circle.style.strokeDashoffset = strokeDashOffset;
     }
