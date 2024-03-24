@@ -236,6 +236,12 @@ body {
   #time div:last-child {
     font-size: 0.4em;
   }
+    #time div:nth-child(1)::after,
+#time div:nth-child(2)::after {
+  content: ':';
+  position: absolute;
+  right: -4px;
+}
 }
 
 @media screen and (max-width: 480px) {
@@ -248,9 +254,17 @@ body {
 
   #time div {
     width: 40px;
+    font-size: 3vw;
   }
 
   #time div:last-child {
     font-size: 3vw;
   }
+
+  #time div:nth-child(1)::after,
+#time div:nth-child(2)::after {
+  content: ':';
+  position: absolute;
+  right: -3px;
+}
 }

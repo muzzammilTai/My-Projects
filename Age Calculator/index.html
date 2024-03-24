@@ -79,6 +79,11 @@
     function calculateAge() {
 
         let inputDate = new Date(document.getElementById("input").value);
+
+        if (isNaN(inputDate)) {
+        updateDisplay("0", "0", "0", "0", "0", "0");
+        return;
+    }
         let currentDate = new Date();
 
         let ageInMilliseconds = currentDate - inputDate;
@@ -104,7 +109,6 @@
         animateCircles(years, months, days, hours, minutes, seconds);
     }
 
-    // Initially, set up the interval to update the age
     setInterval(calculateAge, 1000);
     
     function animateCircles(years, months, days, hours, minutes, seconds) {
